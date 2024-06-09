@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./style.css" />
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Calculator app</title>
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
 
-
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
 </head>
+
 <body class="theme-1">
-  <div class="calculator">
-    <div class="header">
-      <div>
-        <h1>calc</h1>
-      </div>
-      <div class="toggler">
-        <h5>THEME</h5>
-        <div class="toggle">
-          <div class="labels">
-            <label>1</label>
-            <label>2</label>
-            <label>3</label>
-          </div>
-          <div id="toggle-circle" class="circle"></div>
+    <div class="calculator" role="main">
+        <header class="header">
+            <h1>calc</h1>
+            <div class="toggler">
+                <h2 class="theme">theme</h2>
+                <div class="toggle">
+                    <div class="labels" aria-label="theme switch labels">
+                        <label for="theme-1">1</label>
+                        <label for="theme-2">2</label>
+                        <label for="theme-3">3</label>
+                    </div>
+                    <button id="toggle-circle" class="circle" aria-label="Toggle theme"></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="displayer" aria-live="polite">
+            <input type="text" value="0" id="display" disabled aria-label="Calculator display">
         </div>
-      </div>
+
+        <div class="keyboard" role="region" aria-label="Calculator keyboard">
+            <div class="key-body">
+                <button class="button-keyboard" onclick="addCharacter('7')" aria-label="7">7</button>
+                <button class="button-keyboard" onclick="addCharacter('8')" aria-label="8">8</button>
+                <button class="button-keyboard" onclick="addCharacter('9')" aria-label="9">9</button>
+                <button class="button-keyboard del" onclick="removeLastCharacter()" aria-label="Delete">DEL</button>
+                <button class="button-keyboard" onclick="addCharacter('4')" aria-label="4">4</button>
+                <button class="button-keyboard" onclick="addCharacter('5')" aria-label="5">5</button>
+                <button class="button-keyboard" onclick="addCharacter('6')" aria-label="6">6</button>
+                <button class="button-keyboard" onclick="addCharacter('+')" aria-label="Add">+</button>
+                <button class="button-keyboard" onclick="addCharacter('1')" aria-label="1">1</button>
+                <button class="button-keyboard" onclick="addCharacter('2')" aria-label="2">2</button>
+                <button class="button-keyboard" onclick="addCharacter('3')" aria-label="3">3</button>
+                <button class="button-keyboard" onclick="addCharacter('-')" aria-label="Subtract">-</button>
+                <button class="button-keyboard" onclick="addCharacter('.')" aria-label="Decimal">.</button>
+                <button class="button-keyboard" onclick="addCharacter('0')" aria-label="0">0</button>
+                <button class="button-keyboard" onclick="addCharacter('/')" aria-label="Divide">/</button>
+                <button class="button-keyboard" onclick="addCharacter('x')" aria-label="Multiply">x</button>
+                <button class="button-keyboard reset" onclick="clearDisplay()" aria-label="Reset">RESET</button>
+                <button class="button-keyboard equal" onclick="performCalculation()" aria-label="Equals">=</button>
+            </div>
+        </div>
     </div>
 
-    <ddiv class="displayer">
-      <input type="text" value="0" id="display" disabled>
-    </ddiv>
-
-    <div class="keyboard">
-      <div class="key-body">
-        <button class="button-keyboard" onclick="addCharacter('7')">7</button>
-						<button class="button-keyboard" onclick="addCharacter('8')">8</button>
-						<button class="button-keyboard" onclick="addCharacter('9')">9</button>
-						<button class="button-keyboard del" onclick="removeLastCharacter()">DEL</button>
-						<button class="button-keyboard" onclick="addCharacter('4')">4</button>
-						<button class="button-keyboard" onclick="addCharacter('5')">5</button>
-						<button class="button-keyboard" onclick="addCharacter('6')">6</button>
-						<button class="button-keyboard" onclick="addCharacter('+')">+</button>
-						<button class="button-keyboard" onclick="addCharacter('1')">1</button>
-						<button class="button-keyboard" onclick="addCharacter('2')">2</button>
-						<button class="button-keyboard" onclick="addCharacter('3')">3</button>
-						<button class="button-keyboard" onclick="addCharacter('-')">-</button>
-						<button class="button-keyboard" onclick="addCharacter('.')">.</button>
-						<button class="button-keyboard" onclick="addCharacter('0')">0</button>
-						<button class="button-keyboard" onclick="addCharacter('/')">/</button>
-						<button class="button-keyboard" onclick="addCharacter('x')">x</button>
-						<button class="button-keyboard reset" onclick="clearDisplay()">RESET</button>
-						<button class="button-keyboard equal" onclick="performCalculation()">=</button>
-      </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Babalola Victor</a>.
     </div>
 
-  </div>
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Babalola Victor</a>.
-  </div>
-
-  <script src="./index.js"></script>
+    <script src="./index.js"></script>
 </body>
+
 </html>
