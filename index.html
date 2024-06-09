@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css" />
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="theme-1">
+  <div class="calculator">
+    <div class="header">
+      <div>
+        <h1>calc</h1>
+      </div>
+      <div class="toggler">
+        <h5>THEME</h5>
+        <div class="toggle">
+          <div class="labels">
+            <label>1</label>
+            <label>2</label>
+            <label>3</label>
+          </div>
+          <div id="toggle-circle" class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <ddiv class="displayer">
+      <input type="text" value="0" id="display" disabled>
+    </ddiv>
+
+    <div class="keyboard">
+      <div class="key-body">
+        <button class="button-keyboard" onclick="addCharacter('7')">7</button>
+						<button class="button-keyboard" onclick="addCharacter('8')">8</button>
+						<button class="button-keyboard" onclick="addCharacter('9')">9</button>
+						<button class="button-keyboard del" onclick="removeLastCharacter()">DEL</button>
+						<button class="button-keyboard" onclick="addCharacter('4')">4</button>
+						<button class="button-keyboard" onclick="addCharacter('5')">5</button>
+						<button class="button-keyboard" onclick="addCharacter('6')">6</button>
+						<button class="button-keyboard" onclick="addCharacter('+')">+</button>
+						<button class="button-keyboard" onclick="addCharacter('1')">1</button>
+						<button class="button-keyboard" onclick="addCharacter('2')">2</button>
+						<button class="button-keyboard" onclick="addCharacter('3')">3</button>
+						<button class="button-keyboard" onclick="addCharacter('-')">-</button>
+						<button class="button-keyboard" onclick="addCharacter('.')">.</button>
+						<button class="button-keyboard" onclick="addCharacter('0')">0</button>
+						<button class="button-keyboard" onclick="addCharacter('/')">/</button>
+						<button class="button-keyboard" onclick="addCharacter('x')">x</button>
+						<button class="button-keyboard reset" onclick="clearDisplay()">RESET</button>
+						<button class="button-keyboard equal" onclick="performCalculation()">=</button>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Babalola Victor</a>.
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

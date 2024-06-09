@@ -1,0 +1,239 @@
+@font-face {
+    font-family: league;
+    src: url(./LeagueSpartan-Medium.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: league,sans-serif;
+    transition: color 0.3s, background-color 1s;
+   
+}
+
+body.theme-1{
+    --body-bg: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --keypad-color: hsl(221, 14%, 31%);
+    --header-color: hsl(0,0%,100%);
+    --key-keyboard-bg: hsl(30, 25%, 89%);
+    --key-keyboard-shadow: hsl(28, 16%, 65%);
+    --key-keyboard-color: hsl(221, 14%, 31%);
+    --key-keyboard-hover-bg: hsl(0,0%,100%);
+    --key-reset-del-bg: hsl(225, 21%, 49%);
+    --key-reset-del-shadow: hsl(224, 28%, 35%);
+    --key-reset-del-hover-bg: hsl(223.81,51.22%,75.88%);
+    --key-equal-toggle-bg: hsl(6, 63%, 50%);
+    --key-equal-shadow: hsl(6, 70%, 34%);
+    --key-equal-hover-bg: hsl(6.46,92.94%,66.67%);
+    --key-equal-del-reset-color: hsl(0, 0%, 100%);
+    --display-bg: hsl(224, 36%, 15%);
+    --display-color: hsl(0, 0%, 100%);
+}
+
+body.theme-2{
+    --body-bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --keypad-color: hsl(60, 10%, 19%);
+    --header-color: hsl(60, 10%, 19%);
+    --key-keyboard-bg: hsl(45, 7%, 89%);
+    --key-keyboard-shadow: hsl(35, 11%, 61%);
+    --key-keyboard-color: hsl(60, 10%, 19%);
+    --key-keyboard-hover-bg: hsl(0,0%,100%);
+    --key-reset-del-bg: hsl(185, 42%, 37%);
+    --key-reset-del-shadow: hsl(185, 58%, 25%);
+    --key-reset-del-hover-bg: hsl(185.27,40.81%,56.27%);
+    --key-equal-toggle-bg: hsl(25, 98%, 40%);
+    --key-equal-shadow: hsl(25, 99%, 27%);
+    --key-equal-hover-bg: hsl(25.03,100%,60.98%);
+    --key-equal-del-reset-color: hsl(0, 0%, 100%);
+    --display-bg: hsl(0, 0%, 93%);
+    --display-color: hsl(60, 10%, 19%);
+}
+
+body.theme-3{
+    --body-bg: hsl(268, 75%, 9%);
+    --keypad-bg: hsl(268, 71%, 12%);
+    --keypad-color: hsl(52, 100%, 62%);
+    --header-color: hsl(52, 100%, 62%);
+    --key-keyboard-bg: hsl(268, 47%, 21%);
+    --key-keyboard-shadow: hsl(290, 70%, 36%);
+    --key-keyboard-color: hsl(52, 100%, 62%);
+    --key-keyboard-hover-bg: hsl(267.5,53.57%,43.92%);
+    --key-reset-del-bg: hsl(281, 89%, 26%);
+    --key-reset-del-shadow: hsl(285, 91%, 52%);
+    --key-reset-del-hover-bg: hsl(280.16,56.44%,44.12%);
+    --key-equal-toggle-bg: hsl(176, 100%, 44%);
+    --key-equal-shadow: hsl(177, 92%, 70%);
+    --key-equal-hover-bg: hsl(176.64,100%,79.02%);
+    --key-equal-del-reset-color: hsl(0, 0%, 100%);
+    --key-equal-color: hsl(198, 20%, 13%);
+    --display-bg: hsl(268, 71%, 12%);
+    --display-color: hsl(52, 100%, 62%);
+}
+
+body{
+    display: grid;
+    place-items: center;
+    background-color: var(--body-bg);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--header-color);
+}
+
+.toggler{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 8rem;
+}
+
+.toggle{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 4.5rem;
+    height: 25px;
+    background-color: var(--keypad-bg);
+    border-radius: 20px;
+    padding: 5px;
+
+}
+
+.calculator{
+    max-width: 450px;
+  }
+
+.toggle .labels{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    left: 0;
+    bottom: calc(100% + 5px);
+}
+
+.toggle .circle{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--key-equal-toggle-bg);
+    cursor: pointer;
+    margin: 0;
+    transition: margin 0.8s;
+}
+
+#display{
+    width: 100%;
+    text-align: right;
+    background-color: var(--display-bg);
+    height: 6rem;
+    border: none;
+    outline: none;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    color: var(--display-color);
+    padding: 0 20px;
+    font-size: 50px;
+}
+
+.key-body{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto) 1fr;
+    gap: 20px;
+    background-color: var(--keypad-bg);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--keypad-color);
+}
+
+.button-keyboard{
+    background-color: var(--key-keyboard-bg);
+    box-shadow: 0 4px 0 var(--key-keyboard-shadow);
+    color: var(--key-keyboard-color);
+    border: none;
+    border-radius: 10px;
+    min-width: 5rem;
+    min-height: 3rem;
+    transition: all 0.2s;
+    font-weight: 900;
+}
+
+.button-keyboard:hover{
+    background-color: var(--key-keyboard-hover-bg);
+}
+
+.button-keyboard,#display{
+    font-size: 32px;
+}
+
+.key-body .button-keyboard:nth-last-child(-n + 2) {
+    grid-column: span 2;
+}
+
+.del,.reset,.equal{
+    color: var(--key-equal-del-reset-color);
+}
+
+.del,.reset{
+    background-color: var(--key-reset-del-bg);
+    box-shadow: 0 4px 0 var(--key-reset-del-shadow);
+}
+
+.del:hover,.reset:hover{
+    background-color:var(--key-reset-del-hover-bg);
+  }
+
+.equal{
+    background-color: var(--key-equal-toggle-bg);
+    box-shadow: 0 4px 0 var(--key-equal-shadow);
+}
+
+.equal:hover{
+    background-color: var(--key-equal-hover-bg);
+}
+
+.toggle-option{
+    display: none;
+}
+
+  .theme-3 .equal{
+    color: var(--key-equal-color);
+}
+
+.button-keyboard:active{
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .calculator{
+      max-width: 90%;
+      margin:0 5%;
+    }
+    .button-keyboard{
+      min-width: 3rem;
+    }
+    .del,.reset{
+      font-size: 25px;
+    }
+  }
+  
+
+  @media only screen and (max-width: 375px) {
+    .calculator{
+      max-width: 320px!important;
+    }
+    .del,.reset{
+      font-size: 20px;
+    }
+    .button-keyboard{
+      min-width: 3rem;
+    }
+  }
