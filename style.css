@@ -129,6 +129,8 @@ body{
     border-radius: 50%;
     background-color: var(--key-equal-toggle-bg);
     cursor: pointer;
+    border: none;
+    outline: none;
     margin: 0;
     transition: margin 0.8s;
 }
